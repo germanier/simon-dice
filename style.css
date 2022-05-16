@@ -1,0 +1,86 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+}
+/*
+.botcolor {
+  border: 0;
+  background-color: green;
+  border-radius:50%;
+  width: 200px;
+  height: 200px;
+}
+
+.botcolor:hover {
+  background-color: lightgreen;
+}
+*/
+
+#tabla{
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tabla td {
+  padding: 0;
+}
+
+.bot {
+    width: 200px;
+    height: 200px; /* as the half of the width */ 
+    border: 0px solid black;
+//    border-bottom: 5px solid black;
+//    border-top: 5px solid black;
+}
+
+.verde {
+    background-color: green;
+    border-top-right-radius: 210px; /* 100px of height + 10px of border */
+}
+
+.verde:hover {
+    background-color: lightgreen;
+}
+
+.amarillo{
+    background-color: yellow;
+    border-bottom-left-radius: 210px; /* 100px of height + 10px of border */  
+}
+
+.amarillo:hover {
+  background-color: lightyellow;  
+}
+
+.azul{
+    background-color: blue;
+    border-top-left-radius: 210px; /* 100px of height + 10px of border */
+}
+
+.azul:hover {
+  background-color: lightblue;
+}
+
+.rojo{
+      background-color: red;
+    border-bottom-right-radius: 210px; /* 100px of height + 10px of border */
+}
+
+.rojo:hover {
+  background-color: #FA9D9D;
+}
+/*
+.verde {
+    width: 200px;
+    height: 200px; /* as the half of the width */
+    background-color: gold;
+    border-top-right-radius: 210px; /* 100px of height + 10px of border */
+    border: 5px solid gray;
+    border-bottom: 5px solid gray;
+}
+*/
+
