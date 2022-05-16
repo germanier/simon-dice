@@ -30,6 +30,10 @@ html, body {
   padding: 0;
 }
 
+#start {
+// center button
+}
+
 .bot {
     width: 200px;
     height: 200px; /* as the half of the width */ 
@@ -37,6 +41,7 @@ html, body {
 //    border-bottom: 5px solid black;
 //    border-top: 5px solid black;
 }
+
 
 .verde {
     background-color: green;
