@@ -48,7 +48,7 @@ html, body {
     border-top-right-radius: 210px; /* 100px of height + 10px of border */
 }
 
-.verde:hover {
+.verde:active {
     background-color: lightgreen;
 }
 
@@ -57,7 +57,7 @@ html, body {
     border-bottom-left-radius: 210px; /* 100px of height + 10px of border */  
 }
 
-.amarillo:hover {
+.amarillo:active {
   background-color: lightyellow;  
 }
 
@@ -66,7 +66,7 @@ html, body {
     border-top-left-radius: 210px; /* 100px of height + 10px of border */
 }
 
-.azul:hover {
+.azul:active {
   background-color: lightblue;
 }
 
@@ -75,7 +75,7 @@ html, body {
     border-bottom-right-radius: 210px; /* 100px of height + 10px of border */
 }
 
-.rojo:hover {
+.rojo:active {
   background-color: #FA9D9D;
 }
 /*

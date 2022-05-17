@@ -1,28 +1,40 @@
 function createRandomArray(x) {
   let simonArray = []
-  for (let i=x; i > 0; i--) {
+  for (let i = x; i > 0; i--) {
     binary = Math.round(Math.random()).toString() + Math.round(Math.random()).toString()
-    simonArray+= parseInt(binary, 2)
+    simonArray += parseInt(binary, 2)
   }
   return simonArray
 }
 
-function displayArray(array) {
+function returnColour(element, prev) {
+  document.getElementById(element).style.background=previousColour;
+}
+
+function displayArray(array) { 
   for (const element of array) {
+    var previousColour = document.getElementById(element).style.background
+    console.log(previousColour)
+    document.getElementById(element).style.background='#ffffff'
     console.log(element)
+    setTimeout(returnColour, 100, [element, previousColour])
   }
 }
 
-function playGame() {
-  for (x=3; x>0; i++) {
-    var simonArray = createRandomArray(i)
-    displayArray(simonArray)
-    }
-  }
+
 
 function clickFunction(x) {
-  clickNumber = x[0]
+  console.log(x)
+}
+
+function newRound(length = 3) {
+  var simonArray = createRandomArray(length)
+  displayArray(simonArray)
   
+
+  
+
+  length++
 }
 
 //funcion comienze el juego
