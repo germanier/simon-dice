@@ -1,40 +1,62 @@
+pos = 0; length = 0
+simonArray = createRandomArray(length)
+
 function createRandomArray(x) {
-  let simonArray = []
-  for (let i = x; i > 0; i--) {
-    binary = Math.round(Math.random()).toString() + Math.round(Math.random()).toString()
-    simonArray += parseInt(binary, 2)
-  }
-  return simonArray
-}
-
-function returnColour(element, prev) {
-  document.getElementById(element).style.background=previousColour;
-}
-
-function displayArray(array) { 
-  for (const element of array) {
-    var previousColour = document.getElementById(element).style.background
-    console.log(previousColour)
-    document.getElementById(element).style.background='#ffffff'
-    console.log(element)
-    setTimeout(returnColour, 100, [element, previousColour])
+  if (x >= 3) {
+    x++
+    simonArray = Array.from(simonArray)
+    binary = Math.round(Math.random()).toString() + 
+               Math.round(Math.random()).toString()
+    simonArray.push(parseInt(binary, 2))
+                    
+    console.info(x, simonArray)
+  } else {
+    simonArray = []
+    for (let i = 3; i > 0; i--) {
+      binary = Math.round(Math.random()).toString() + 
+               Math.round(Math.random()).toString()
+      simonArray += parseInt(binary, 2)
+    }
+    return simonArray
   }
 }
 
-
-
-function clickFunction(x) {
-  console.log(x)
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function newRound(length = 3) {
-  var simonArray = createRandomArray(length)
+async function displayArray() {
+  for (let i = 0; i < (simonArray.length); i++) {
+    element = simonArray[i]
+    let previousColour = document.getElementById(element).style.backgroundColor
+    document.getElementById(element).style.backgroundColor = '#ffffff'
+    await sleep(1000)
+    document.getElementById(element).style.backgroundColor = previousColour
+    await sleep(100)
+  }
+}
+
+function clickFunction(click) {
+  if (click != simonArray[pos]) {
+    endGame()
+  } else
+    pos++
+
+  if (pos == simonArray.length) {
+    createRandomArray(pos)
+    pos = 0
+    newRound()
+  }
+}
+
+function newRound() {
   displayArray(simonArray)
-  
+ // gameplay
+  //  newRound(length++)
+}
 
+function endGame() {
   
-
-  length++
 }
 
 //funcion comienze el juego
