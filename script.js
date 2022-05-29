@@ -56,6 +56,7 @@ function newRound() {
 }
 
 function endGame() {
+ 
   
 }
 
@@ -67,4 +68,3 @@ function endGame() {
 //game.close()
 // your score is i
 // math.random(0,3)
-
