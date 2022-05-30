@@ -1,9 +1,10 @@
 
-pos = 0; length = 0
-simonArray = createRandomArray(length)
-endisButton(true)
+pos = 0 // position
+length = 0 // initialise length of array
+simonArray = createRandomArray(length) // initialise simonArray
+disableButtonPress(true) // make simon buttons not trigger endGame
 
-// creates the SimonArray 
+// creates and updates the SimonArray 
 function createRandomArray(x) {
   if (x >= 3) { // if already created, add another item
     x++
@@ -32,7 +33,7 @@ function sleep(ms) {
 // show simonArray this round
 async function displayArray() {
   //flag_display = true
-  endisButton(true)
+  disableButtonPress(true)
   
   for (let i = 0; i < (simonArray.length); i++) {
     element = simonArray[i]
@@ -43,11 +44,11 @@ async function displayArray() {
     await sleep(100)
   }
 
-  endisButton(false)
+  disableButtonPress(false)
 }
 
 // enable / disable buttons
-function endisButton(x) {
+function disableButtonPress(x) {
   var botones = document.getElementsByClassName("bot")
   
   for(boton of botones) {
@@ -58,6 +59,7 @@ function endisButton(x) {
 // compare each click to simonArray
 function clickFunction(click) { 
   if (click != simonArray[pos]) {
+    pos = 0
     endGame()
     //return
   } else {
@@ -65,7 +67,7 @@ function clickFunction(click) {
     if (pos == simonArray.length) {
       createRandomArray(pos)
       pos = 0
-      endisButton(true)
+      disableButtonPress(true)
       newRound()
     }
   }
@@ -91,7 +93,7 @@ function errorornot() {
 }
 
 function endGame() {
-  endisButton(true)
+  disableButtonPress(true)
   var url_api = "https://dog.ceo/api/breeds/image/random"
   flg_responseok = false
   setTimeout(errorornot, 1000)
@@ -114,15 +116,6 @@ function endGame() {
       }
   ).catch(console.log('pipo'))
   
-  simonArray = []
+  simonArray = createRandomArray(0)
   
 }
-
-//funcion comienze el juego
-// ranInt 0-3 {} i++
-// []
-// mostrar secuencia
-//0-3
-//game.close()
-// your score is i
-// math.random(0,3)
