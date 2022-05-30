@@ -17,10 +17,23 @@ html, body {
 }
 */
 
+.losePopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  background: white;
+  border-radius: 10px;
+  z-index: 10;
+  visibility: hidden;
+  
+}
+
 #tabla{
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 1;
+  margin: 1;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
@@ -30,6 +43,19 @@ html, body {
   padding: 0;
 }
 
+#scores {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30;
+  width: 400;
+}
+
+#tabla scoreElement {
+  padding: 100;
+  margin: 100;
+  style="text-align:center;
+}
+
 #start {
 // center button
 }
@@ -37,15 +63,17 @@ html, body {
 .bot {
     width: 200px;
     height: 200px; /* as the half of the width */ 
-    border: 0px solid black;
-//    border-bottom: 5px solid black;
-//    border-top: 5px solid black;
+    border: 3px solid black;
+//    border-bottom: 3px solid black;
+//    border-top: 3px solid black;
 }
 
 
 .verde {
     background-color: green;
     border-top-right-radius: 210px; /* 100px of height + 10px of border */
+    border: 3.5 px solid black;
+    
 }
 
 .verde:active {
@@ -55,6 +83,8 @@ html, body {
 .amarillo{
     background-color: yellow;
     border-bottom-left-radius: 210px; /* 100px of height + 10px of border */  
+    border: 3.5 px solid black;
+
 }
 
 .amarillo:active {
@@ -64,6 +94,8 @@ html, body {
 .azul{
     background-color: blue;
     border-top-left-radius: 210px; /* 100px of height + 10px of border */
+    border: 3.5 px solid black;
+
 }
 
 .azul:active {
@@ -71,8 +103,10 @@ html, body {
 }
 
 .rojo{
-      background-color: red;
+    background-color: red;
     border-bottom-right-radius: 210px; /* 100px of height + 10px of border */
+    border: 3.5 px solid black;
+
 }
 
 .rojo:active {
@@ -81,9 +115,9 @@ html, body {
 /*
 .verde {
     width: 200px;
-    height: 200px; /* as the half of the width */
+    height: 200px; // as the half of the width 
     background-color: gold;
-    border-top-right-radius: 210px; /* 100px of height + 10px of border */
+    border-top-right-radius: 210px; // 100px of height + 10px of border 
     border: 5px solid gray;
     border-bottom: 5px solid gray;
 }

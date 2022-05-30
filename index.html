@@ -10,10 +10,23 @@
 
 <body>
   <h1 id="a_title">Simón Dice</h1>
+
+  <div class="losePopup" id="losePopup">
+    <div class="loseHeader">
+      <div class="loseTitle"> You Lose! </div>
+      <button class="loseButton" onclick="loseButtonClick()"> &times; </button>
+    </div>
+    <div class="loseBody">
+      <img id="loseImage" src=""/>
+      You've lost, young sire.
+      Try again another time!
+    </div>
+  </div>
+  
   <table id = "tabla">
     <tr>
       <td>
-        <button class="bot azul" id = "0" onclick="clickFunction(this.id)"></button>        
+        <button class="bot azul"  id = "0" onclick="clickFunction(this.id)"></button>        
       </td>
       <td>
         <button class="bot verde"  id = "1" onclick="clickFunction(this.id)"></button>
@@ -30,6 +43,18 @@
   </table>
 
   <button id="start" onclick="newRound();">Start Game!</button>
+
+ <table id = "scores">
+    <tr>
+      <td style="text-align:center">
+        <p id='scoreElement currentScore'>Current Score: 0</p>
+      </td>
+      </tr>
+   <tr>
+      <td style="text-align:center">
+        <p id='scoreElement highScore'>High Score: 0</p>
+      </td>
+    </tr>
   <script src="script.js"></script>
 </body>
 
